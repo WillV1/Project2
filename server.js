@@ -16,7 +16,9 @@ const PORT = process.env.PORT || 7000;
 const db = require("./models");
 
 const app = express();
-app.use(compression({ filter: shouldCompress }))
+app.use(compression(
+  // { filter: shouldCompress }
+  ))
 app.set("view engine", "handlebars");
 
 
