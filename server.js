@@ -1,4 +1,4 @@
-
+const compression = require('compression');
 const express = require("express");
 const session = require("express-session");
 const path = require("path");
@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 7000;
 const db = require("./models");
 
 const app = express();
+app.use(compression({ filter: shouldCompress }))
 app.set("view engine", "handlebars");
 
 
